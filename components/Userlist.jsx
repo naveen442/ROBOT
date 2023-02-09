@@ -10,8 +10,8 @@ const Userlist = ({users}) => {
 
   const clickbtn=(e)=>{
  setData(e.target.value);
- users.filter(e => e.name.toLowerCase().includes(data))
- console.log(users)
+//  users.filter(e => e.name.toLowerCase().includes(data))
+//  console.log(users)
   }
  
     const router = useRouter();
@@ -20,7 +20,7 @@ const Userlist = ({users}) => {
      <input type="text" className="mb-4" value={data}onChange={clickbtn}/>
     <div className="row 5">
     {users.filter((e)=>{
-          if(e.name.includes(data)){
+          if(e.name.toLowerCase().includes(data.toLowerCase())){
             return e;
         }}).map((user)=>{
             return(
